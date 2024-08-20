@@ -10,6 +10,7 @@ public class Trabalhador {
 
     public Trabalhador() {
     }
+    public Trabalhador(ArrayList<DiaTrabalhado> diasTrabalhados) {}
 
     public Trabalhador(double taxa, String nome, ArrayList<DiaTrabalhado> diasTrabalhados) {
         this.taxa = taxa;

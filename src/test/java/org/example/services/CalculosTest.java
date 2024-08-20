@@ -1,41 +1,42 @@
 package org.example.services;
 
 import org.example.entities.DiaTrabalhado;
-import org.example.entities.Trabalhador;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.*;
+
 
 class CalculosTest {
 
 
     @Test
-    @DisplayName("colocar descrição")
+    @DisplayName("calcula o total de horas trabalhadas")
     void calcularHoras() {
 
-        double totalDeHoras = 10;
+        double resultadoFinal = 60;
+        double totalDeHoras =0.0;
 
-        String nome = "kelve";
-        double taxa = 0.5;
+        DiaTrabalhado hora1 = new DiaTrabalhado(20.0);
+        DiaTrabalhado hora2 = new DiaTrabalhado(20.0);
+        DiaTrabalhado hora3 = new DiaTrabalhado(20.0);
 
-        double horasTrabalhadas = 20.0;
-        DiaTrabalhado listaHoras = new DiaTrabalhado(horasTrabalhadas);
         ArrayList<DiaTrabalhado> diastrabalhados= new ArrayList<>();
-        diastrabalhados.add(listaHoras);
+        diastrabalhados.add(hora1);
+        diastrabalhados.add(hora2);
+        diastrabalhados.add(hora3);
 
-
-        Trabalhador trabalhador = new Trabalhador(taxa,nome,diastrabalhados);
-        Calculos calculos = new Calculos(trabalhador);
-
-        double resultado = calculos.calcularHoras(trabalhador.getDiasTrabalhados(),trabalhador.getTaxa());
-       Assertions.assertEquals(resultado,resultado);
+        for(DiaTrabalhado dia: diastrabalhados){
+            totalDeHoras+=dia.getHorasTrabalhando();
+        }
+       Assertions.assertEquals(totalDeHoras,resultadoFinal);
     }
 
     @Test
+    @DisplayName("calcula o total de pagamentos")
     void calcularPaganento() {
+
     }
 }

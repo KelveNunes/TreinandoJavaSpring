@@ -8,14 +8,15 @@ import java.util.ArrayList;
 public class Calculos {
 
 
-    public Calculos(Trabalhador trabalhador) {
+    public Calculos(){}
+    public Calculos(Trabalhador trabalhador) {}
+
+
+    public static Double calcularHoras(ArrayList<DiaTrabalhado> horas,double taxa) {
+        return 1.0;
     }
 
-    public Double calcularHoras(ArrayList<DiaTrabalhado> horas,double taxa) {
-        return 10.0;
-    }
-
-    public Double calcularPaganento(Double a, Double b) {
+    public static Double calcularPaganento(Double a, Double b) {
         return -1.0;
     }
 }
