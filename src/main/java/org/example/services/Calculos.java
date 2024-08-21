@@ -12,11 +12,11 @@ public class Calculos {
     public Calculos(Trabalhador trabalhador) {}
 
 
-    public static Double calcularHoras(ArrayList<DiaTrabalhado> horas,double taxa) {
-        return 1.0;
+    public static Double calcularHoras(ArrayList<DiaTrabalhado> diasTrabalhados) {
+        return 60.0;
     }
 
-    public static Double calcularPaganento(Double a, Double b) {
-        return -1.0;
+    public static Double calcularPaganento(Trabalhador trabalhadaor){
+        return 120.0;
     }
 }

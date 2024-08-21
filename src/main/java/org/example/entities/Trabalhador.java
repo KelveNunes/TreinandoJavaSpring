@@ -8,11 +8,9 @@ public class Trabalhador {
     private ArrayList<DiaTrabalhado>
             diasTrabalhados = new ArrayList<DiaTrabalhado>();
 
-    public Trabalhador() {
-    }
     public Trabalhador(ArrayList<DiaTrabalhado> diasTrabalhados) {}
 
-    public Trabalhador(double taxa, String nome, ArrayList<DiaTrabalhado> diasTrabalhados) {
+    public Trabalhador(String nome, double taxa, ArrayList<DiaTrabalhado> diasTrabalhados) {
         this.taxa = taxa;
         this.nome = nome;
         this.diasTrabalhados = diasTrabalhados;
