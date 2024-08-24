@@ -1,4 +1,4 @@
-package org.example.entities;
+package org.contador.model.entities;
 
 import java.util.ArrayList;
 

@@ -1,7 +1,7 @@
-package org.example.services;
+package org.contador.services;
 
-import org.example.entities.DiaTrabalhado;
-import org.example.entities.Trabalhador;
+import org.contador.model.entities.DiaTrabalhado;
+import org.contador.model.entities.Trabalhador;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

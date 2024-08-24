@@ -1,6 +1,4 @@
-package org.example.entities;
-
-import java.util.Date;
+package org.contador.model.entities;
 
 public class DiaTrabalhado {
 
