@@ -1,7 +1,7 @@
 package org.contador.services;
 
-import org.contador.model.entities.DiaTrabalhado;
-import org.contador.model.entities.Trabalhador;
+import org.contador.model.DiaTrabalhado;
+import org.contador.model.Trabalhador;
 
 import java.util.ArrayList;
 
