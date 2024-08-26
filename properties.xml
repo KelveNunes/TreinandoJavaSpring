@@ -1,6 +1,6 @@
 <configuration>
     <database>
-        <url>jdbc:mysql://localhost:3306/Local instance MySQL90</url>
+        <url>jdbc:mysql://localhost:3306/Contador</url>
         <username>root</username>
         <password>102030</password>
         <driver>com.mysql.cj.jdbc.Driver</driver>

@@ -1,51 +1,36 @@
 package org.contador.db;
 
-
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.ParserConfigurationException;
-
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
-
-import java.io.IOException;
+import org.w3c.dom.*;
+import javax.xml.parsers.*;
+import java.io.*;
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
+import org.xml.sax.SAXException;
 
 public class Connect {
 
-    {
+    public Connection connection() {
+        Connection conn = null;
+
         try {
 
-            DocumentBuilderFactory factory =DocumentBuilderFactory.newInstance();
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document doc = builder.parse("C:\\Users\\kelve\\OneDrive\\Documentos\\Java\\Projetos\\contador-de-horas\\properties.xml");
+            Document doc = builder.parse("C:\\Users\\kelve\\OneDrive\\Documentos\\Java Project\\Treinamento Java\\TreinandoJavaSpring\\properties.xml");
 
 
-            Element url = doc.getElementById("url");
-            String urlString = url.toString();
-            Element username = doc.getElementById("username");
-            String usernameString = username.toString();
-            Element password = doc.getElementById("password");
-            String passwordString = password.toString();
+            String url = doc.getElementsByTagName("url").item(0).getTextContent();
+            String username = doc.getElementsByTagName("username").item(0).getTextContent();
+            String password = doc.getElementsByTagName("password").item(0).getTextContent();
 
 
-            DriverManager conexao = (DriverManager) DriverManager.getConnection(urlString,usernameString,passwordString);
+            conn = DriverManager.getConnection(url, username, password);
 
-
-        } catch (ParserConfigurationException | SAXException | IOException e) {
-            Logger.getLogger(Connect.class.getName()).log(Level.SEVERE, null, e);
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        } catch (SQLException | ParserConfigurationException | SAXException | IOException e) {
+            System.out.println(e.getMessage());
         }
+
+        return conn;
     }
-
-
 }
