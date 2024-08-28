@@ -10,7 +10,7 @@ import org.xml.sax.SAXException;
 
 public class Connect {
 
-    public Connection connection() {
+    public static Connection connection() {
         Connection conn = null;
 
         try {
@@ -25,7 +25,7 @@ public class Connect {
             String password = doc.getElementsByTagName("password").item(0).getTextContent();
 
 
-            conn = DriverManager.getConnection(url, username, password);
+            conn = DriverManager.getConnection(url, username, "102040"); //erro
 
         } catch (SQLException | ParserConfigurationException | SAXException | IOException e) {
             System.out.println(e.getMessage());
